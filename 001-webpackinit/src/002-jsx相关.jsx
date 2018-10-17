@@ -16,10 +16,23 @@ const box = <div class="box">神奇的 React</div>
 let num = 10,
     str = "jsx",
     bol = true,
-    arr = [<h4>你好</h4>]
+    arr = [<h4>你好</h4>];
 
+// 对字符窜数组进行遍历的两种方法
+let arrList = ['柴', '米', '油', '盐'];
 
+// 一、forEach 方法，
+// 定义一个空数组，用来接收存放的标签名称
+let tagName = [];
+arrList.forEach(item => {
+    tagName.push(<h4>{ item }</h4>)
+})
 
+// 二、map 方法
+// 一定要 return
+// arrList.map(item => {
+//     return <h6>{ item }</h6>
+// })
 
 ReactDOM.render(<div>
     {box}
@@ -33,4 +46,10 @@ ReactDOM.render(<div>
     { bol ? "真" : "假" }
     <hr />
     { arr }
+    <hr />
+    { tagName }
+    <hr />
+    { arrList.map(item => {
+        return <h6>{ item }</h6>
+    }) }
 </div>,document.getElementById('app'))

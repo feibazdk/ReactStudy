@@ -20,4 +20,10 @@ module.exports = {
             { test: /\.js|jsx$/, use: 'babel-loader', exclude: /node_modules/ }, // 千万别忘记添加 exclude 排除项
         ]
     },
+    resolve: {
+        extensions: ['.js', '.jsx', '.json'],
+        alias: {
+            '@': path.join(__dirname, './src')
+        }
+    }
 }
