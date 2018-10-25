@@ -19,7 +19,7 @@ export default class MobileList extends React.Component {
 
     render() {
         return <div>
-            <h3>手机资讯</h3>
+            <h3 style={{ fontSize: '20px', color: 'red', textAlign: 'center' }}>手机资讯</h3>
             {this.state.bookList.map(item => <MobileItem {...item} key={ item.id }></MobileItem>)}
         </div>
     }

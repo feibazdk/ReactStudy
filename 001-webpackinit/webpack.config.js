@@ -18,6 +18,9 @@ module.exports = {
     module: { // 所有第三方 模块的配置规则
         rules: [ // 第三方匹配规则
             { test: /\.js|jsx$/, use: 'babel-loader', exclude: /node_modules/ }, // 千万别忘记添加 exclude 排除项
+            { test: /\.css$/, use: ['style-loader', 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:5]']},
+            { test: /\.ttf|woff|woff2|eto|svg}$/, use: 'url-loader' },
+            { test: /\.scss$/, use: ['style-loader', 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:5]', 'sass-loader'] }
         ]
     },
     resolve: {
